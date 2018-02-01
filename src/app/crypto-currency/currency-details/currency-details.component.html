@@ -1,0 +1,31 @@
+<div class="container is-fluid">
+    <div class="notification is-info">
+        <h1 class="title">
+            {{currency?.id | uppercase}}
+        </h1>
+        <h2 class="subtitle">
+          Name: {{currency?.name | uppercase}}, <small> Last modified: {{currency?.last_updated | date}}</small>
+        </h2>
+      </div>
+      <div class="box">
+          <ul class="content">
+            <li>Name: {{currency?.name | uppercase}}</li>
+            <li>Rank: {{currency?.rank}}</li>
+            <li>Price: {{currency?.price_usd | currency}}</li>
+            <li>Price BTC: {{currency?.price_btc | currency}}</li>
+            <li>Volume 24h: {{currency?.volume_2h_usd | currency}}</li>
+            <li>Market Cap {{currency?.market_cap_usd | currency}}</li>
+            <li>Available Supply: {{currency?.available_supply}}</li>
+            <li>Total Supply: {{currency?.total_supply}}</li>
+            <li>Max Supply: {{currency?.max_supply}}</li>
+            <li>% Change 1H: {{currency?.percent_change_1h}}</li>
+            <li>% Change 24H: {{currency?.percent_change_24h}}</li>
+            <li>% Change 7d: {{currency?.percent_change_7d}}</li>
+          </ul>
+        </div>
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-link" (click)="backToCurrencyList()">Go Back</button>
+    </div>
+  </div>
+</div>

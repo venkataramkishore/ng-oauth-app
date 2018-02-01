@@ -1,0 +1,69 @@
+<div class="jumbotron">
+  <div class="columns">
+    <div class="column">
+        <div class="title">Crypto Currencies</div>
+        <div class="sub-title">Click on currency id to see specific currency details</div>
+    </div>
+    <div class="column">
+                
+      </div>
+      <div class="column">
+          <input class="input is-primary is-rounded" type="text" [(ngModel)]="searchTxt" placeholder="Search currencies">
+          <div class="select is-success is-rounded">
+              <select name="convertTo" [(ngModel)]="convertTo">
+                <option *ngFor="let option of convertToCurrency" [ngValue]="option">{{option}}</option>
+              </select>
+            </div>
+      </div>
+  </div>
+  <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+    <thead>
+      <tr>
+        <th>
+          <abbr title="Currency ID">ID</abbr>
+        </th>
+        <th>Name</th>
+        <th>
+          <abbr title="Symbol">Sym</abbr>
+        </th>
+        <th>
+          Rank
+        </th>
+        <th>
+          <abbr title="Price USD">Price USD</abbr>
+        </th>
+        <th>
+          <abbr title="Price BTC">Price BTC</abbr>
+        </th>
+        <th>
+          <abbr title="24Hrs Volume">24H Vol.</abbr>
+        </th>
+        <th>
+          <abbr title="Market CAP USD">Market CAP USD</abbr>
+        </th>
+        <th>
+          <abbr title="Available Supply">Available Supply</abbr>
+        </th>
+        <th>
+          <abbr title="Total Supply">Total Supply</abbr>
+        </th>
+        <th>Max Supply</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let currency of currencyList | async">
+        <td><a  href="#" [routerLink]="currency.id">{{currency.id}}</a></td>
+        <td>{{currency.name}}</td>
+        <td>{{currency.symbol}}</td>
+        <td>{{currency.rank}}</td>
+        <td>{{currency.price_usd}}</td>
+        <td>{{currency.price_btc}}</td>
+        <td>{{currency.volume_24h_usd}}</td>
+        <td>{{currency.market_cap_usd}}</td>
+        <td>{{currency.available_supply}}</td>
+        <td>{{currency.total_supply}}</td>
+        <td>{{currency.max_supply}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

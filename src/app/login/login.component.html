@@ -1,0 +1,30 @@
+<div class="box">
+  <div class="title">Identify yourself...</div>
+  <div class="field">
+    <p class="control has-icons-left has-icons-right">
+      <input class="input" type="email" [(ngModel)]="username" placeholder="Email" [disabled]="disableField">
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </p>
+  </div>
+  <div class="field">
+    <p class="control has-icons-left">
+      <input class="input" type="password" [(ngModel)]="password" placeholder="Password" [disabled]="disableField">
+      <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+      </span>
+    </p>
+  </div>
+  <div class="field">
+    <p class="control">
+      <button class="button is-success" (click)="login()" [disabled]="disableField">
+        Login
+      </button>
+    </p>
+  </div>
+<app-notification [show]="notification?.show" [type]="notification?.type" [message]="notification?.message" [title]="notification?.title"></app-notification>
+</div>
